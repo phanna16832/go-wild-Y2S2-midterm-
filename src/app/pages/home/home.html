@@ -1,0 +1,99 @@
+<main class="bg-amber-100">
+<div>
+  <video controls autoplay loop muted  class="w-full h-[720px]">
+    <source src="video1.mp4">
+  </video>
+</div>
+<div>
+  <!-- content header -->
+  <div>
+    <h1 class="text-green-700 font-bold text-4xl text-center">
+      Our Popular Experiences <span class="text-yellow-500 text-2xl">Nov-Dec 2025</span>
+    </h1>
+    <p class="text-green-700 font-medium text-xl text-center text-wrap">
+      Discover our most popular experiences, where local communities actively participate to share
+      their culture, cuisine, and lifestyle, adding a unique and authentic touch to each experience.
+    </p>
+
+    <!-- content -->
+    <div class="ml-10 flex flex-wrap gap-5">
+      @for (location of locations; track $index) {
+      <div class="bg-gray-700 w-[340px] h-[450px] rounded-md">
+        <img [src]="location.img" alt="Pineapple Island" class=" w-[342px] h-[252px]">
+        <h2 class="text-xl text-white font-bold p-2 text-center">
+          {{location.name}}
+        </h2>
+        <div class="ml-5">
+        <p class="text-white">
+        <i class="fa-regular fa-square-check text-yellow-400"></i>
+        Duration: 3 Days 2 Nights
+        </p>
+        <p class="text-white">
+          <i class="fa-solid fa-dollar-sign text-yellow-500 p-2 "></i>
+          price:{{location.price}}
+        </p>
+        <p class="text-white">
+          <i class="fa-solid fa-calendar text-yellow-500"></i>
+          calendar
+        </p><br>
+        <a class="w-full border-t border-yellow-500 text-yellow-500 text-center font-bold block pt-2 cursor-pointer">
+          More Information
+        </a>
+      </div>
+      </div>
+    }
+    </div>
+    <button
+      class="w-60 flex justify-center items-center m-auto p-4 mb-3 bg-orange-400 text-white text-xl font-bold rounded-sm cursor-pointer"
+    >
+      See All Experiences &gt;
+    </button>
+    <div class="bg-gray-700 w-full">
+      <div class="flex items-center justify-center gap-2">
+        <h3 class="uppercase text-yellow-500 text-2xl font-bold text-center">
+          Explore Our Activites
+        </h3>
+        <img src="love.png" alt="love-icon" class="w-6" />
+      </div>
+      <h4 class="text-xl text-amber-100 text-center py-5">
+        Find Your ideal travel package in Cambodia tailored to your favorite activites.
+      </h4>
+    </div>
+      <!-- categories img -->
+       <div class="flex flex-wrap">
+  @for (c of categories; track $index) {
+    <div class="w-1/2 p-2">
+      <div class="relative w-[664px] h-[300px] aspect-square overflow-hidden rounded-lg cursor-pointer">
+        <img
+          [ngSrc]="c.img"
+          [alt]="c.name"
+          fill
+          [priority]="$index === 0"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <span
+          class="absolute inset-0 flex items-center justify-center
+                 text-white font-bold text-2xl bg-black/40"
+        >
+          {{ c.name }}
+        </span>
+      </div>
+    </div>
+  }
+</div>
+
+
+    <pre class="text-green-700  text-2xl font-medium text-center mt-15 mb-15">
+We're outdoor enthusiasts who prioritize sustainable  
+and responsible travel that respects nature and local 
+communities. Our trip give travelers a chance to 
+enjoy the journey while making a meaningful impact
+</pre>
+<button class=" mt-4 rounded-lg bg-orange-500 cursor-pointer text-white font-medium w-[200px] h-10 block m-auto mb-2 ">
+  Meet The Team  
+</button>
+    </div>  
+  </div>
+
+  <div></div>
+</main>

@@ -1,0 +1,63 @@
+
+
+
+<main class="bg-amber-100 p-6">
+  <header class="max-w-3xl m-10 flex">
+    <figure>
+      <img src="/siemreap.jpg" alt="GO WILD Cambodia logo" class="w-[4500px] mb-4" />
+    </figure>
+
+    <div class="ml-10">
+      <h1 class="text-3xl font-bold text-orange-400">Meet the team</h1>
+
+      <p class="text-green-700">
+        GO WILD Cambodia started from the passion of two local hikers who never spent a weekend
+        indoors.
+        <br /><br />
+        Always on the trail, they loved exploring hidden corners of Cambodia. Though they began with
+        separate pages, their shared journey led them to join forces and creating GO WILD Cambodia
+        in December 2024, to inspire others to explore the beauty of places and people, travel
+        responsibly, and reconnect with the nature of their homeland.
+      </p>
+    </div>
+  </header>
+  <section class="mt-10">
+  <h2 class="bg-gray-700 text-yellow-500 text-3xl font-semibold mb-8 flex justify-center items-center p-4 w-full h-[150px]">
+    Introducing the wholesome organizers
+  </h2>
+
+  <div class="flex flex-col gap-8 px-6"> 
+    
+    @for (m of member; track $index) {
+      <figure class="flex items-center gap-8 p-4 rounded-xl">
+        
+        <div class="relative w-72 h-72 shrink-0 rounded-full overflow-hidden ">
+          <img 
+            [ngSrc]="m.img" 
+            width="300" 
+            height="300" 
+            alt="member img" 
+            class="w-full h-full object-cover" 
+          />
+        </div>
+
+        <figcaption class="flex flex-col justify-center">
+          <div class="text-green-700 font-black text-3xl mb-2">
+            <h3 class="flex flex-col sm:flex-row gap-2">
+              {{m.name}} 
+              <span class="text-orange-500 font-bold text-2xl  self-end">
+                {{m.role}}
+              </span>
+            </h3>
+          </div>
+          <p class="text-yellow-400 font-medium text-xl leading-relaxed max-w-2xl">
+            {{m.caption}}
+          </p>
+        </figcaption>
+      </figure>
+      
+    }
+
+  </div>
+</section>
+</main>
