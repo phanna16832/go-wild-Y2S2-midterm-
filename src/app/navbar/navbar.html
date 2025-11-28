@@ -8,10 +8,40 @@
       <a 
       [routerLink]="navitem.path"
       class=" text-xl font-medium text-amber-100"
+      routerLinkActive="border-b-2 border-yellow-500 !text-green-400"
+      [routerLinkActiveOptions]="{exact:true}"
       >
-      {{ navitem.route }}
+      {{ navitem.route | translate}}
     </a>
     </li>
     }
   </ul>
+  <div>
+    <div class="relative group"> 
+      
+      <button class="flex items-center text-amber-100 p-2 border border-gray-500 rounded-md">
+        Language
+        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+      </button>
+
+      <div class="absolute right-0 mt-2 w-20 bg-gray-800 rounded-md shadow-lg z-10 
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+        
+        <button 
+          (click)="changeLang('km')" 
+          class="block w-full text-left px-4 py-2 text-sm text-amber-100 hover:bg-gray-600 focus:outline-none"
+        >
+          KM
+        </button>
+
+        <button 
+          (click)="changeLang('en')" 
+          class="block w-full text-left px-4 py-2 text-sm text-amber-100 hover:bg-gray-600 focus:outline-none"
+        >
+          EN
+        </button>
+        
+      </div>
+    </div>
+  </div>
 </nav>

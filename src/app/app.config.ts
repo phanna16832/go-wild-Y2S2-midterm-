@@ -2,9 +2,9 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessC
 import { provideRouter } from '@angular/router';
 
 //i18n
-import {provideTranslateService, provideTranslateLoader} from "@ngx-translate/core";
-import {provideTranslateHttpLoader} from "@ngx-translate/http-loader";
 import {provideHttpClient} from "@angular/common/http";
+import {provideTranslateService, provideTranslateLoader} from "@ngx-translate/core";
+import {provideTranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
 
@@ -14,11 +14,11 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(routes),
 
-    provideHttpClient(),
-    provideTranslateHttpLoader(),
-    provideTranslateHttpLoader({
-    prefix: './i18n/',
-    suffix: '.json'
-})
+    //i18n
+     provideHttpClient(),
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({prefix:'./i18n/', suffix:'.json'}),
+      fallbackLang: 'en'
+    })
   ]
 };
