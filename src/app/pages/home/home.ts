@@ -1,12 +1,11 @@
 import { Component, inject, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from "@angular/common";
-import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, NgOptimizedImage, TranslateModule ],
+  imports: [CommonModule ],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
@@ -53,13 +52,12 @@ export class Home {
 
   ];
 
- categories = [
-  {name:'Culture Tour', img:'view/curture.jpg'},
-  {name:'Hiking and Trekking', img:'view/hiking.jpg'},
-  {name:'Day Tour', img:'view/daytour.webp'},
-  {name:'Island Tour', img:'view/island.webp'},
-]
-
+categories = [
+  { name: 'Culture Tour', img: '/view/curture.jpg' },
+  { name: 'Hiking and Trekking', img: '/view/hiking.jpg' },
+  { name: 'Day Tour', img: '/view/daytour.webp' },
+  { name: 'Island Tour', img: '/view/island.webp' },
+];
 
 
   router = inject(Router);
