@@ -10,7 +10,6 @@ export class Footer {
 members = [
   "Sorn Phou",
   "Kan Sopanha",
-  "Sak Sochetra",
   "Sreng Mengsun",
   "Sok Saingsiveng",
   "Sok Siphanna",
