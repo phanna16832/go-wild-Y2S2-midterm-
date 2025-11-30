@@ -10,20 +10,10 @@ import { TranslateModule ,TranslateService} from '@ngx-translate/core';
 })
 export class Navbar {
   navbar: {path:string; route: string}[]=[
-    {path:'', route:'nav.home'},
-    {path:'story', route:'nav.story'},
-    {path:'experience', route:'nav.experiences'},
-    {path:'notFound', route:'nav.notfound'},
+    {path:'', route:'Home'},
+    {path:'story', route:'Story'},
+    {path:'experience', route:'Experiences'},
+    {path: 'booking',route: 'Booking'},
   ]
 
-
-  //translate
-    constructor(private translate: TranslateService) {
-  this.translate.use('en');
-  this.translate.setFallbackLang('en');
-}
-
-  changeLang(lang: string) {
-    this.translate.use(lang);
-  }
 }

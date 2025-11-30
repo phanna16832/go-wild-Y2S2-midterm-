@@ -1,8 +1,62 @@
-<h1>
-    all of our experiences 
+<main class="bg-amber-100 w-full min-h-screen p-10">
+  <div class="relative w-[1200px] h-[500px] mx-auto">
+<img
+    ngSrc="view/mount.jpg"
+    alt="Mount"
+    fill
+    priority
+    class="object-cover rounded-lg"
+  />
+  </div>
+  
+  <section>
+    <h1 class="uppercase text-green-700 font-bold text-4xl text-center m-5">
+      all of our experiences 
+    </h1>
+    <p class="text-center text-green-700 text-2xl font-medium">
+      Explore and discover experiences tailored to your interests where local communities actively participate to share their culture,
+cuisine, and lifestyle, adding a unique and authentic touch to each experience.
+    </p>
+  </section>
 
-</h1>
-<h2>
-    Explore and discover experiences tailored to your interests where local communities actively participate to share their culture,
-cuisine, and lifestyle, adding a unique and authentic touch to each experience
-</h2>
+  <!-- catogories -->
+
+  <div class="mt-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center cursor-pointer">
+  @for (location of locations; track $index) {
+    <div class="bg-gray-700 w-[340px] h-[450px] rounded-md">
+      <img [src]="location.img" alt="Pineapple Island" class="w-[342px] h-[252px]" />
+      
+      <h2 class="text-xl text-white font-bold p-2 text-center">
+        {{ location.name }}
+      </h2>
+
+      <div class="ml-5">
+        <p class="text-white">
+          <i class="fa-regular fa-square-check text-yellow-400"></i>
+          Duration: 3 Days 2 Nights
+        </p>
+
+        <p class="text-white">
+          <i class="fa-solid fa-dollar-sign text-yellow-500 p-2"></i>
+          Price{{ location.price }}
+        </p>
+
+        <p class="text-white">
+          <i class="fa-solid fa-calendar text-yellow-500"></i>
+          Duration: {{location.duration}}
+        </p>
+
+        <br />
+
+        <a
+          class="w-full border-t-2 border-yellow-500 text-yellow-500 text-center font-bold block pt-2 cursor-pointer"
+        >
+          More Information &gt;
+        </a>
+      </div>
+    </div>
+  }
+</div>
+
+</main>
+

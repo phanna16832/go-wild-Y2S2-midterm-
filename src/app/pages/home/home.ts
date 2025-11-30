@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { Router } from '@angular/router';
@@ -6,51 +6,58 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, NgOptimizedImage, TranslateModule],
+  imports: [CommonModule, NgOptimizedImage, TranslateModule ],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })
 export class Home {
   price :number[] = [75, 135, 115, 250, 200];
-  locations = [
+    locations = [
     {
-      name: 'home.location.knorngPhsarMount',
+      name: 'knorng Phsar Mount',
       img: '/view/Pineapple%20Island.jpg',
       duration: '2 Days 1 Night',
       // The length of the array is 5. We need an index from 0 to 4.
       price: this.price[Math.floor(Math.random() * this.price.length)],
     },
     {
-      name: 'home.location.knorngPreahMount',
+      name: 'knorng Preah Mount',
       img: '/view/Knorng%20Preah%20Mount.jpeg',
       duration: '4 Days 3Night',
       price: this.price[Math.floor(Math.random() * this.price.length)],
     },
     {
-      name: 'home.location.pineappleMount',
+      name: 'Pineapple Mount',
       img: '/view/Pineapple%20Island.jpg',
       duration: '2 Days 1 Night',
       price: this.price[Math.floor(Math.random() * this.price.length)],
     },
     {
-      name: 'home.location.vealthom',
+      name: 'Vealthom',
       img: '/view/vealthom.jpg',
       duration: '3 Days 2Night',
       price: this.price[Math.floor(Math.random() * this.price.length)],
     },
     {
-      name: 'home.location.kohKongKrav',
+      name: 'Koh Kong Krav',
       img: '/view/Koh%20Kong%20Krao.jpg',
       duration: '2 Days 1 Night',
       price: this.price[Math.floor(Math.random() * this.price.length)],
     },
+    {
+      name:'Angkor Wat',
+      img:'view/angkorwat.jpg',
+      duration: '[02-Dec - 08-Dec]',
+      price: this.price[Math.floor(Math.random() * this.price.length)],
+    }
+
   ];
 
  categories = [
-  {name:'home.categories.culture', img:'view/curture.jpg'},
-  {name:'home.categories.hiking', img:'view/hiking.jpg'},
-  {name:'home.categories.dayTour', img:'view/daytour.webp'},
-  {name:'home.categories.islandTour', img:'view/island.webp'},
+  {name:'Culture Tour', img:'view/curture.jpg'},
+  {name:'Hiking and Trekking', img:'view/hiking.jpg'},
+  {name:'Day Tour', img:'view/daytour.webp'},
+  {name:'Island Tour', img:'view/island.webp'},
 ]
 
 
@@ -63,5 +70,5 @@ export class Home {
     this.router.navigateByUrl('/experience');
   }
 
-
+@Input() data: string = "hello world";
 }
