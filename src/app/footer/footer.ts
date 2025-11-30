@@ -14,7 +14,7 @@ members = [
   "Sreng Mengsun",
   "Sok Saingsiveng",
   "Sok Siphanna",
-  "Nat RinvireakBoth"
+  "Nat RinvirakBoth"
 ];
 
 }
